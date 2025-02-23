@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<!-- saved from url=(0035)https://lxxhui.github.io/intro.html -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The AI Chronicles – Unlocking the Future</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Rajdhani:wght@400;700&display=swap');
+        
+        body {
+            background-color: rgb(9, 12, 32);
+            color: white;
+            font-family: 'Orbitron', sans-serif;
+            text-align: center;
+            background-image: url('space_background.jpg');
+            background-size: cover;
+            background-position: center;
+            width: 960px;
+            height: 540px;
+            margin: auto;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+            position: relative;
+        }
+        
+        .container {
+            width: 100%;
+            height: 100%;
+            margin-top: 150px;
+            margin-left: 50px;
+            margin-right: 50px;
+            padding-bottom: 20px;
+            background: rgba(0, 0, 0, 0.85);
+            border-radius: 15px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            box-shadow: 0px 0px 30px cyan;
+            position: relative;
+            z-index: 1;
+        }
+        
+        h1 {
+            color: cyan;
+            margin-top: 30px;
+            margin-bottom: 20px;
+            font-size: 45px;
+            text-shadow: 0px 0px 20px cyan, 0px 0px 35px blue;
+            animation: pulse 1.5s infinite alternate;
+        }
+        
+        @keyframes pulse {
+            from { text-shadow: 0px 0px 15px cyan; }
+            to { text-shadow: 0px 0px 30px cyan; }
+        }
+        
+        .mission-box {
+            width: 80%;
+            background: rgba(0, 255, 255, 0.3);
+            border: 3px solid cyan;
+            padding: 10px;
+            margin: 25px 0;
+            border-radius: 15px;
+            box-shadow: 0px 0px 20px cyan;
+            font-family: 'Rajdhani', sans-serif;
+            font-size: 20px;
+        }
+
+        p strong {
+            color: yellow;
+            font-weight: bold;
+            text-shadow: 0px 0px 10px yellow;
+            font-style: italic;
+        }
+
+        .start-button {
+            background: linear-gradient(90deg, cyan, blue);
+            color: black;
+            font-size: 22px;
+            margin-top: 10px;
+            font-weight: bold;
+            padding: 15px 30px;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            text-transform: uppercase;
+            transition: 0.3s;
+            box-shadow: 0px 0px 20px cyan;
+        }
+        
+        .start-button:hover {
+            background: linear-gradient(90deg, blue, cyan);
+            box-shadow: 0px 0px 25px cyan;
+            transform: scale(1.1);
+        }
+        
+        .planet, .moon, .nebula, .spaceship, .meteor {
+            position: absolute;
+            border-radius: 50%;
+            box-shadow: 0px 0px 40px blue;
+        }
+        
+        .planet {
+            width: 120px;
+            height: 120px;
+            background: radial-gradient(circle, blue, darkblue);
+            top: 5%;
+            left: 10%;
+            animation: rotatePlanet 15s linear infinite;
+        }
+        
+        .moon {
+            width: 60px;
+            height: 60px;
+            background: radial-gradient(circle, gray, darkgray);
+            top: 80%;
+            left: 85%;
+            animation: floatMoon 8s ease-in-out infinite alternate;
+        }
+        
+        .nebula {
+            width: 180px;
+            height: 180px;
+            background: radial-gradient(circle, purple, transparent);
+            top: 25%;
+            right: 5%;
+            animation: pulseNebula 6s infinite alternate;
+        }
+        
+        .spaceship {
+            width: 100px;
+            height: 50px;
+            background: gray;
+            top: 40%;
+            left: 2%;
+            clip-path: polygon(50% 0%, 100% 100%, 0% 100%);
+            animation: flyShip 10s linear infinite;
+        }
+        
+        .meteor {
+            width: 50px;
+            height: 50px;
+            background: orange;
+            top: 10%;
+            right: 2%;
+            animation: fallMeteor 6s linear infinite;
+        }
+        
+        @keyframes rotatePlanet {
+            from { transform: rotate(0deg) translateX(30px) rotate(0deg); }
+            to { transform: rotate(360deg) translateX(30px) rotate(-360deg); }
+        }
+        
+        @keyframes floatMoon {
+            from { transform: translateY(0px); }
+            to { transform: translateY(-30px); }
+        }
+        
+        @keyframes pulseNebula {
+            from { opacity: 0.5; transform: scale(1); }
+            to { opacity: 1; transform: scale(1.3); }
+        }
+        
+        @keyframes flyShip {
+            from { transform: translateX(0px); }
+            to { transform: translateX(1000px); }
+        }
+        
+        @keyframes fallMeteor {
+            from { transform: translateY(0px); }
+            to { transform: translateY(400px); }
+        }
+    </style>
+</head>
+<body data-new-gr-c-s-check-loaded="14.1223.0" data-gr-ext-installed="">
+    <div class="planet"></div>
+    <div class="moon"></div>
+    <div class="nebula"></div>
+    <div class="spaceship"></div>
+    <div class="meteor"></div>
+    <div class="container">
+        <h1>WELCOME TO THE AI CHRONICLES</h1>
+        <p>You have been selected to join the elite <strong>AI Phantoms</strong>, guardians of planet Xyra.</p>
+        <div class="mission-box">
+            <h2>THE MISSION</h2>
+            <p>The evil digital entity, SYNTHOR, is spreading misinformation about AI. <br> Your task is to protect the truth, eliminate the myths and save Xyra.</p>
+        </div>
+        <a href="https://lxxhui.github.io/characters.html"><button class="start-button" onclick="startMission()">BEGIN YOUR JOURNEY</button></a>
+    </div>
+    <audio autoplay>
+        <source src="Is It Real_1_Main Mix.mp3" type="audio/mp3">
+    </audio>
+    <script>
+        function startMission() {
+            alert("Mission initiated! Get ready to battle misinformation and protect Xyra.");
+        }
+    </script>
+
+</body><grammarly-desktop-integration data-grammarly-shadow-root="true"><template shadowrootmode="open"><style>
+      div.grammarly-desktop-integration {
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        padding: 0;
+        margin: -1px;
+        overflow: hidden;
+        clip: rect(0, 0, 0, 0);
+        white-space: nowrap;
+        border: 0;
+        -moz-user-select: none;
+        -webkit-user-select: none;
+        -ms-user-select:none;
+        user-select:none;
+      }
+
+      div.grammarly-desktop-integration:before {
+        content: attr(data-content);
+      }
+    </style><div aria-label="grammarly-integration" role="group" tabindex="-1" class="grammarly-desktop-integration" data-content="{&quot;mode&quot;:&quot;full&quot;,&quot;isActive&quot;:true,&quot;isUserDisabled&quot;:false}"></div></template></grammarly-desktop-integration></html>
