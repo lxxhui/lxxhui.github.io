@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The AI Chronicles – Fun Facts</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Rajdhani:wght@400;700&display=swap');
+        
+        body {
+            background: rgb(9, 12, 32);
+            color: white;
+            font-family: 'Orbitron', sans-serif;
+            text-align: center;
+            width: 960px;
+            height: 540px;
+            margin: auto;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+            position: relative;
+        }
+        
+        .container {
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to bottom, #000428, #004e92);
+            border-radius: 15px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            top: 15%;
+            box-shadow: 0px 0px 30px cyan;
+            position: relative;
+            z-index: 1;
+        }
+
+        h1 {
+            font-size: 32px;
+            font-weight: bold;
+            color: cyan;
+            text-shadow: 0px 0px 10px cyan;
+        }
+
+        .fact-container {
+            background: rgba(0, 0, 0, 0.8);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 20px cyan;
+            width: 80%;
+            text-align: left;
+        }
+        
+        p{
+            font-family: 'Rajdhani', sans-serif;
+        }
+
+        .fact {
+            font-size: 18px;
+            margin-bottom: 10px;
+        }
+
+        .back-button {
+            background: cyan;
+            border: none;
+            padding: 10px;
+            font-size: 16px;
+            font-family: 'Rajdhani', sans-serif;
+            font-weight: bold;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: background 0.3s, color 0.3s;
+            margin-top: 20px;
+        }
+
+        .back-button:hover {
+            background: darkcyan;
+        }
+
+        .galaxy-elements {
+            position: absolute;
+            top: 5%;
+            left: 5%;
+            width: 100px;
+            height: 100px;
+            background: radial-gradient(circle, purple, transparent);
+            animation: pulseNebula 6s infinite alternate;
+        }
+
+        @keyframes pulseNebula {
+            from { opacity: 0.5; transform: scale(1); }
+            to { opacity: 1; transform: scale(1.3); }
+        }
+        .stars {
+            position: absolute;
+            width: 3px;
+            height: 3px;
+            background: white;
+            border-radius: 50%;
+            box-shadow: 0px 0px 5px white;
+            animation: twinkle 2s infinite alternate;
+        }
+
+        @keyframes twinkle {
+            0% { opacity: 0.3; }
+            100% { opacity: 1; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>AI Fun Facts</h1>
+        <div class="fact-container">
+            <p class="fact">💡 There are many Gen AI tools available for different purposes such as ChatGPT, Google Gemini, Meta AI, Midjourney and Dall-E.</p>
+            <p class="fact">🚀 Gen AI can result in data privacy concerns when you upload private documents or information. Be mindful of what you include or write in your prompt.</p>
+            <p class="fact">🌌 Providing more information to your prompts using the format "Persona, Task, Audience, Context, Format" will help produce results more accurate to your needs!</p>
+        </div>
+        <a href="reward.html"></a><button class="back-button" onclick="window.location.href='reward.html'">Back to Quiz</button></a>
+        <div class="galaxy-elements"></div>
+    </div>
+    <script>
+        function createStars(num) {
+            for (let i = 0; i < num; i++) {
+                let star = document.createElement("div");
+                star.classList.add("stars");
+                star.style.top = Math.random() * 100 + "%";
+                star.style.left = Math.random() * 100 + "%";
+                document.body.appendChild(star);
+            }
+        }
+        createStars(50);
+    </script>
+</body>
+</html>

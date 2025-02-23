@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The AI Chronicles – Meteor Defense Quiz</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Rajdhani:wght@400;700&display=swap');
+        
+        body {
+            background: rgb(9, 12, 32);
+            color: white;
+            font-family: 'Orbitron', sans-serif;
+            text-align: center;
+            width: 960px;
+            height: 540px;
+            margin: auto;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+            position: relative;
+        }
+        
+        .container {
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to bottom, #000428, #004e92);
+            border-radius: 15px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            top: 15%;
+            box-shadow: 0px 0px 30px cyan;
+            position: relative;
+            z-index: 1;
+        }
+
+        h1 {
+            font-size: 32px;
+            font-weight: bold;
+            color: cyan;
+            margin-top: -10px ;
+            text-shadow: 0px 0px 10px cyan;
+        }
+
+        h2 {
+            font-size: 20px;
+            font-weight: normal;
+            margin-bottom: 20px;
+        }
+
+        .meteor {
+            width: 150px;
+            height: 150px;
+            position: absolute;
+            top: 10%;
+            right: 10%;
+        }
+
+        .quiz-container {
+            background: rgba(0, 0, 0, 0.8);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 20px cyan;
+            width: 80%;
+            text-align: left;
+        }
+
+        .question {
+            font-size: 18px;
+            margin-bottom: 10px;
+        }
+
+        .options button {
+            display: block;
+            width: 100%;
+            margin: 5px 0;
+            padding: 10px;
+            font-size: 16px;
+            font-family: 'Rajdhani', sans-serif;
+            font-weight: bold;
+            background: cyan;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: background 0.3s, color 0.3s;
+        }
+
+        .options button:hover {
+            background: darkcyan;
+        }
+
+        .correct {
+            background: green !important;
+            color: white;
+        }
+
+        .incorrect {
+            background: red !important;
+            color: white;
+        }
+
+        .sally-container {
+            position: absolute;
+            bottom: 5%;
+            left: 10%;
+            display: flex;
+            align-items: center;
+        }
+
+        .sally-container img {
+            width: 80px;
+            height: auto;
+            margin-right: 10px;
+        }
+
+        .hint-button, .continue-button {
+            background: cyan;
+            border: none;
+            padding: 10px;
+            font-size: 16px;
+            font-family: 'Rajdhani', sans-serif;
+            font-weight: bold;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: background 0.3s, color 0.3s;
+        }
+
+        .hint-button:hover, .continue-button:hover {
+            background: darkcyan;
+        }
+
+        .continue-button {
+            display: none ;
+            margin-left: 400px; 
+            margin-top: 120px;
+        }
+
+        #sally, #hint-button {
+            transition: opacity 0.5s ease;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>METEOR DEFENSE QUIZ</h1>
+        <h2>Answer all questions correctly to eliminate the meteor!</h2>
+        <img src="meteor1.png" class="meteor" alt="Meteor">
+        
+        <div class="quiz-container">
+            <p class="question">Question will appear here</p>
+            <div class="options">
+                <button onclick="checkAnswer(true, this)">True</button>
+                <button onclick="checkAnswer(false, this)">False</button>
+            </div>
+        </div>
+
+        <div class="sally-container">
+            <img src="sally.png" alt="Sally">
+            <button class="hint-button" onclick="showHint()">Ask Sally for a Hint</button>
+        </div>   
+        <button class="continue-button" onclick="window.location.href='facts 3.html'">Let's learn more about AI together!</button>
+    </div>
+    <script>
+        const questions = [
+            { text: "ChatGPT is the only Gen AI platform we can use.", answer: false, hint: "Have you heard of any other AI tools?" },
+            { text: "Using Gen AI will keep your personal information safe.", answer: false, hint: "What are the potential risks?" },
+            { text: "For a high quality prompt, you should follow this: Persona, Task, Audience, Context, Format.", answer: true, hint: "What makes a good prompt?" }
+        ];
+        
+        let currentQuestion = 0;
+        
+        function loadQuestion() {
+            document.querySelector(".question").textContent = questions[currentQuestion].text;
+            document.querySelectorAll(".options button").forEach(button => {
+                button.classList.remove("correct", "incorrect");
+                button.disabled = false;
+            });
+        }
+        
+        function checkAnswer(answer, button) {
+            if (answer === questions[currentQuestion].answer) {
+                button.classList.add("correct");
+                setTimeout(() => {
+                    currentQuestion++;
+                    if (currentQuestion < questions.length) {
+                        loadQuestion();
+                    } else {
+                        alert("Congratulations! You can now eliminate the meteor.");
+                        document.querySelector(".meteor").style.display = "none";
+                        document.querySelector(".continue-button").style.display = "block";
+                    }
+                }, 1000);
+            } else {
+                button.classList.add("incorrect");
+            }
+        }
+        
+        function showHint() {
+            alert(questions[currentQuestion].hint);
+        }
+        
+        loadQuestion();
+        
+    </script>
+    <a href="facts 3.html"><button class="continue-button">Let's learn more about AI together!</button></a>
+</body>
+</html>

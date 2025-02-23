@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The AI Chronicles – Meteor Defense</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Rajdhani:wght@400;700&display=swap');
+        
+        body {
+            background: rgb(9, 12, 32);
+            color: white;
+            font-family: 'Orbitron', sans-serif;
+            text-align: center;
+            width: 960px;
+            height: 540px;
+            margin: auto;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+            position: relative;
+        }
+        
+        .container {
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to bottom, #000428, #004e92);
+            border-radius: 15px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            top: 15%;
+            box-shadow: 0px 0px 30px cyan;
+            position: relative;
+            z-index: 1;
+        }
+        
+        h1 {
+            font-size: 32px;
+            font-weight: bold;
+            color: cyan;
+            text-shadow: 0px 0px 10px cyan;
+        }
+
+        p{
+            margin-top: -10px;
+        }
+        @keyframes spaceship-glow {
+            0% { box-shadow: 0px 0px 10px cyan; }
+            100% { box-shadow: 0px 0px 20px cyan; }
+        }
+        
+        .meteor {
+            width: 150px;
+            height: 150px;
+            position: absolute;
+        }
+
+        .meteor:nth-of-type(1) { top: 20%; left: 10%; }
+        .meteor:nth-of-type(2) { top: 5%; left: 50%; transform: translateX(-50%); }
+        .meteor:nth-of-type(3) { top: 20%; right: 10%; }
+
+        .commander {
+            position: absolute;
+            bottom: 5%;
+            left: 50%;
+            transform: translateX(-50%);
+            background: rgba(0, 0, 0, 0.7);
+            padding: 10px;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            box-shadow: 0px 0px 10px cyan;
+        }
+
+        .commander img {
+            width: 80px;
+            height: auto;
+            margin-right: 10px;
+        }
+
+        .speech-bubble {
+            position: relative;
+            background: cyan;
+            color: black;
+            padding-right: 100px;
+            padding-left: 100px;
+            border-radius: 10px;
+            font-family: 'Rajdhani', sans-serif;
+            font-size: 15px;
+            font-weight: bold;
+            text-align:start;
+            max-width: 600px;
+            border: 3px solid black;
+            animation: speech-fade 3s infinite alternate;
+        }
+
+        @keyframes speech-fade {
+            0% { opacity: 1; }
+            100% { opacity: 0.7; }
+        }
+        .planet, .moon, .nebula, .spaceship, .meteor {
+            position: absolute;
+            border-radius: 50%;
+            box-shadow: 0px 0px 40px blue;
+        }
+        
+        .planet {
+            width: 120px;
+            height: 120px;
+            background: radial-gradient(circle, blue, darkblue);
+            top: -5%;
+            left: -15%;
+            animation: rotatePlanet 15s linear infinite;
+        }
+        
+        .moon {
+            width: 60px;
+            height: 60px;
+            background: radial-gradient(circle, gray, darkgray);
+            top: 80%;
+            left: 120%;
+            animation: floatMoon 8s ease-in-out infinite alternate;
+        }
+        
+        .nebula {
+            width: 150px;
+            height: 150px;
+            background: radial-gradient(circle, purple, transparent);
+            top: 25%;
+            left: 100%;
+            animation: pulseNebula 6s infinite alternate;
+        }
+
+        @keyframes rotatePlanet {
+            from { transform: rotate(0deg) translateX(30px) rotate(0deg); }
+            to { transform: rotate(360deg) translateX(30px) rotate(-360deg); }
+        }
+        
+        @keyframes floatMoon {
+            from { transform: translateY(0px); }
+            to { transform: translateY(-30px); }
+        }
+        
+        @keyframes pulseNebula {
+            from { opacity: 0.5; transform: scale(1); }
+            to { opacity: 1; transform: scale(1.3); }
+        }
+        .eliminate-button {
+            padding: 5px 10px;
+            font-size: 14px;
+            font-family: 'Orbitron', sans-serif;
+            background-color: red;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            position: absolute;
+            margin-top: 170px; /* Ensures buttons are below meteors */
+        }
+
+        .eliminate-button:hover {
+            background-color: darkred;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>METEOR DEFENSE</h1>
+        <p>Destroy 3 meteors to save the spaceship!</p>
+        <div class="planet"></div>
+        <div class="moon"></div>
+        <div class="nebula"></div>
+        <img src="meteor1.png" class="meteor" alt="Meteor1">
+        <img src="meteor2.png" class="meteor" alt="Meteor2">
+        <img src="meteor3.png" class="meteor" alt="Meteor3">
+        <button class="eliminate-button" onclick="window.location.href='meteor 1 qn.html'"style="top: 20%; left: 12%;">Eliminate 1st!</button>
+        <button class="eliminate-button" onclick="window.location.href='meteor 2 qn.html'"style="top: 5%; left: 50%; transform: translateX(-50%);">Eliminate 2nd!</button>
+        <button class="eliminate-button" onclick="window.location.href='meteor 3 qn.html'"style="top: 20%; right: 12%;">Eliminate 3rd!</button>
+        <div class="commander">
+            <img src="commander.png" alt="Commander">
+            <div class="speech-bubble">Look, those are meteors that SYNTHOR has planted! We need to eliminate them! Click on one of the meteors and answer the questions about AI correctly to eliminate it.</div>
+        </div>
+    </div>
+    <nav>
+    <a href="meteor 1 qn.html"><button class="eliminate-button" style="top: 20%; left: 12%;">Eliminate 1st!</button></a>
+    <a href="meteor 2 qn.html"><button class="eliminate-button" style="top: 5%; left: 50%; transform: translateX(-50%);">Eliminate 2nd!</button></a>
+    <a href="meteor 3 qn.html"><button class="eliminate-button" style="top: 20%; right: 12%;">Eliminate 3rd!</button></a>
+    </nav>
+</body>
+</html>

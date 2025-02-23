@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The AI Chronicles – Unlocking the Future</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Rajdhani:wght@400;700&family=Arial:wght@400;700&family=Poppins:wght@400;700&display=swap');
+        
+        body {
+            background-color: rgb(9, 12, 32);
+            color: white;
+            font-family: 'Orbitron', sans-serif;
+            text-align: center;
+            width: 100vw;
+            height: 100vh;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+            position: relative;
+        }
+
+        h1, p {
+            position: relative;
+            z-index: 2;
+        }
+
+        h1 {
+            color: cyan;
+            font-size: 40px;
+            text-shadow: 0px 0px 20px cyan, 0px 0px 35px blue;
+            animation: pulse 1.5s infinite alternate;
+            margin-top: -150px;
+        }
+
+        p {
+            font-size: 18px;
+            padding: 10px;
+            margin-top: -20px;
+        }
+
+        p strong {
+            color: yellow;
+            font-weight: bold;
+            text-shadow: 0px 0px 10px yellow;
+            font-style: italic;
+        }
+
+        .character-container {
+            display: flex;
+            justify-content: space-evenly;
+            align-items: center;
+            width: 80%;
+            margin-top: 20px;
+        }
+
+        .character {
+            width: 180px;
+            text-align: center;
+            position: relative;
+            filter: drop-shadow(0px 0px 10px rgba(0, 255, 255, 0.8));
+        }
+
+        .character img {
+            width: 80%;
+            border-radius: 50%;
+            border: 3px solid cyan;
+        }
+
+        .speech {
+            background: rgba(0, 0, 0, 0.7);
+            border: 2px solid cyan;
+            color: white;
+            padding: 15px; 
+            border-radius: 15px;
+            width: 220px;
+            text-align: center;
+            position: absolute;
+            font-family: 'Poppins', sans-serif;
+            font-size: 14px;
+            line-height: 1.5;
+            font-style: italic;
+            top: 110%;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+
+        .orbs div {
+            position: absolute;
+            width: 30px;
+            height: 30px;
+            background: rgba(173, 216, 230, 0.7);
+            border-radius: 50%;
+            animation: float 5s infinite alternate ease-in-out;
+        }
+
+        @keyframes float {
+            0% { transform: translateY(0); }
+            100% { transform: translateY(-20px); }
+        }
+
+        .start-button {
+            background: linear-gradient(90deg, cyan, blue);
+            color: black;
+            font-size: 16px;
+            font-weight: bold;
+            padding: 15px 30px;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            text-transform: uppercase;
+            transition: 0.3s;
+            box-shadow: 0px 0px 20px cyan;
+            margin-top: -200px;
+            position: relative;
+            margin-left: 230px;
+            bottom: 200%;
+            transform: translateX(-50%);
+        }
+
+        .start-button:hover {
+            background: yellow;
+        }
+
+        .planet, .moon, .nebula, .spaceship, .meteor {
+            position: absolute;
+            border-radius: 50%;
+            box-shadow: 0px 0px 40px blue;
+        }
+        
+        .planet {
+            width: 120px;
+            height: 120px;
+            background: radial-gradient(circle, blue, darkblue);
+            top: 5%;
+            left: 10%;
+            animation: rotatePlanet 15s linear infinite;
+        }
+        
+        .moon {
+            width: 60px;
+            height: 60px;
+            background: radial-gradient(circle, gray, darkgray);
+            top: 80%;
+            left: 85%;
+            animation: floatMoon 8s ease-in-out infinite alternate;
+        }
+        
+        .nebula {
+            width: 150px;
+            height: 150px;
+            background: radial-gradient(circle, purple, transparent);
+            top: 25%;
+            right: 5%;
+            animation: pulseNebula 6s infinite alternate;
+        }
+
+        @keyframes rotatePlanet {
+            from { transform: rotate(0deg) translateX(30px) rotate(0deg); }
+            to { transform: rotate(360deg) translateX(30px) rotate(-360deg); }
+        }
+        
+        @keyframes floatMoon {
+            from { transform: translateY(0px); }
+            to { transform: translateY(-30px); }
+        }
+        
+        @keyframes pulseNebula {
+            from { opacity: 0.5; transform: scale(1); }
+            to { opacity: 1; transform: scale(1.3); }
+        }
+                
+        .stars {
+            position: absolute;
+            width: 3px;
+            height: 3px;
+            background: white;
+            border-radius: 50%;
+            box-shadow: 0px 0px 5px white;
+            animation: twinkle 2s infinite alternate;
+        }
+
+        @keyframes twinkle {
+            0% { opacity: 0.3; }
+            100% { opacity: 1; }
+        }
+    </style>
+    <script>
+        function startMission() {
+            alert('Your mission begins now! Prepare for an adventure through the AI universe.');
+        }
+    </script>
+</head>
+<body>
+    <h1>MEET THE <br> TEAM</h1>
+    <p>Here are your teammates in <strong>AI Phantoms</strong> <br> who will be guiding you on this journey.</p>
+    <div class="planet"></div>
+    <div class="moon"></div>
+    <div class="nebula"></div>
+    <div class="character-container">
+        <div class="character">
+            <img src="commander.png" alt="Commander">
+            <div class="speech">Greetings! I am Commander Luke. Let's navigate the uncharted lands and conquer every challenge ahead.</div>
+        </div>
+
+        <div class="character">
+            <img src="sally.png" alt="Sally">
+            <div class="speech">Hi there! I'm Sally, your trusty guide. I'll be here to provide wisdom, clues, and a bit of fun along the way!</div>
+        </div>
+    </div>
+
+    <a href="main game page.html"><button class="start-button" onclick="startMission()">Start Your Mission</button></a>
+    <script>
+        function createStars(num) {
+            for (let i = 0; i < num; i++) {
+                let star = document.createElement("div");
+                star.classList.add("stars");
+                star.style.top = Math.random() * 100 + "%";
+                star.style.left = Math.random() * 100 + "%";
+                document.body.appendChild(star);
+            }
+        }
+        createStars(50);
+    </script>
+</body>
+</html>
